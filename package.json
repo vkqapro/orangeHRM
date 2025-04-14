@@ -1,0 +1,26 @@
+{
+  "name": "orangehrm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "health": "npx playwright test --project=health"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vkqapro/orangeHRM.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/vkqapro/orangeHRM/issues"
+  },
+  "homepage": "https://github.com/vkqapro/orangeHRM#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "@types/node": "^22.14.1"
+  }
+}
