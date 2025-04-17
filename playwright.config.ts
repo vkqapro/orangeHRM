@@ -42,11 +42,7 @@ export default defineConfig({
     {
       name: 'e2e',
       testMatch: 'e2e.spec.ts',
-      use: {browserName: 'chromium', 
-        viewport:{
-          width: 1200,
-          height: 800
-        }},
+      use: { ...devices['Desktop Chrome'] },
       fullyParallel: false,
     }, 
     
