@@ -14,7 +14,8 @@ export class NavigateTo{
     }
 
     async pim(){
-        await this.page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList')
+        const page = this.page
+        await page.locator('[class="oxd-text oxd-text--span oxd-main-menu-item--name"]').filter({hasText: "PIM"}).click()
         expect(this.page.url()).toBe('https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList')
     }
 }

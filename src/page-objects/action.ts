@@ -17,8 +17,8 @@ export class Action{
         await page.locator('.oxd-grid-item', {hasText: "Password"}).locator('input').first().fill(userPassword)
         await page.locator('.oxd-grid-item', {hasText: "Confirm Password"}).locator('input').fill(userPassword)
         await page.getByRole('button', {name: "Save"}).click()
-        await page.waitForTimeout(5000)
         const element = await page.locator('[class="orangehrm-edit-employee-name"]').innerText()
+        await page.waitForTimeout(2000)
         expect(element).toEqual(`${employeeName} ${employeeLastname}`)
         console.log(element)
 
