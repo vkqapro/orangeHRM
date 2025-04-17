@@ -1,4 +1,4 @@
-import { test } from "@playwright/test";
+import { test } from "../test-options"
 import { PageManager } from "../src/pageManager";
 import dotenv from 'dotenv'
 
@@ -12,24 +12,19 @@ const employeeLastname = "Smith"
 const EmployeeUserName = process.env.USER_EMPLOYEE
 const EmployeeUserPassword = process.env.PASSWORD_EMPLOYEE
 
-test.beforeEach(async({page})=>{
-    pm = new PageManager(page)
-    
-})
-
 test.describe('e2e', ()=> {
-    test('Login as Admin', async()=>{
-        await pm.navigateTo().loginPage()
-        await pm.login().loginAsAdmin(`${user}`, `${password}`)
-        await pm.navigateTo().pim()
-        await pm.action().addEmployee(employeeName, employeeLastname, `${EmployeeUserName}`, `${EmployeeUserPassword}`)
+    test('Login as Admin', async({pageManager})=>{
+        await pageManager.navigateTo().loginPage()
+        await pageManager.login().loginAsAdmin(`${user}`, `${password}`)
+        await pageManager.navigateTo().pim()
+        await pageManager.action().addEmployee(employeeName, employeeLastname, `${EmployeeUserName}`, `${EmployeeUserPassword}`)
     })
 
-    test('Delete Employee', async()=>{
-        await pm.navigateTo().loginPage()
-        await pm.login().loginAsAdmin(`${user}`, `${password}`)
-        await pm.navigateTo().pim()
-        await pm.action().deleteEmployee(employeeName, employeeLastname)
+    test('Delete Employee', async({pageManager})=>{
+        await pageManager.navigateTo().loginPage()
+        await pageManager.login().loginAsAdmin(`${user}`, `${password}`)
+        await pageManager.navigateTo().pim()
+        await pageManager.action().deleteEmployee(employeeName, employeeLastname)
     })
 
 })
