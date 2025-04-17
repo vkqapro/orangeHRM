@@ -20,6 +20,11 @@ test.describe('E2E UI Tests', ()=> {
         await pageManager.action().addEmployee(employeeName, employeeLastname, `${EmployeeUserName}`, `${EmployeeUserPassword}`)
     })
 
+    test('Login as Eemployee', async({pageManager})=>{
+        await pageManager.navigateTo().loginPage()
+        await pageManager.login().loginAsEmployee(`${EmployeeUserName}`, `${EmployeeUserPassword}`, employeeName, employeeLastname)
+    })
+
     test('Delete an Employee', async({pageManager})=>{
         await pageManager.navigateTo().loginPage()
         await pageManager.login().loginAsAdmin(`${user}`, `${password}`)
