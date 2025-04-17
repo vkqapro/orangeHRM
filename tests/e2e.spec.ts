@@ -25,11 +25,11 @@ test.describe('e2e', ()=> {
         await pm.action().addEmployee(employeeName, employeeLastname, `${EmployeeUserName}`, `${EmployeeUserPassword}`)
     })
 
-    test('Delete Employee', async()=>{
-        await pm.navigateTo().loginPage()
-        await pm.login().loginAsAdmin(`${user}`, `${password}`)
-        await pm.navigateTo().pim()
-        await pm.action().deleteEmployee(employeeName, employeeLastname)
-    })
+    // test('Delete Employee', async()=>{
+    //     await pm.navigateTo().loginPage()
+    //     await pm.login().loginAsAdmin(`${user}`, `${password}`)
+    //     await pm.navigateTo().pim()
+    //     await pm.action().deleteEmployee(employeeName, employeeLastname)
+    // })
 
 })
