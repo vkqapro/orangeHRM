@@ -1,0 +1,20 @@
+import {type Page, expect} from "@playwright/test"
+
+export class NavigateTo{
+    readonly page: Page
+
+    constructor(page: Page){
+        this.page = page
+    }
+    
+    async loginPage(){
+        const page = this.page
+        await page.goto('/')
+        expect(page.url()).toBe('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+    }
+
+    async pim(){
+        await this.page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList')
+        expect(this.page.url()).toBe('https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList')
+    }
+}

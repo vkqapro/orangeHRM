@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "health": "npx playwright test --project=health"
-
+    "health": "npx playwright test --project=e2e"
   },
   "repository": {
     "type": "git",
@@ -22,5 +21,8 @@
   "devDependencies": {
     "@playwright/test": "^1.51.1",
     "@types/node": "^22.14.1"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0"
   }
 }

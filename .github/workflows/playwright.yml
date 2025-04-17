@@ -17,8 +17,13 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
+<<<<<<< Updated upstream
     - name: Run Playwright tests
       run: npm run health
+=======
+    # - name: Run Playwright tests
+      # run: npx playwright test
+>>>>>>> Stashed changes
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
