@@ -16,6 +16,7 @@ export class NavigateTo{
     async pim(){
         const page = this.page
         await page.locator('[class="oxd-text oxd-text--span oxd-main-menu-item--name"]').filter({hasText: "PIM"}).click()
+        await page.waitForURL('https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList')
         expect(this.page.url()).toBe('https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList')
     }
 }
