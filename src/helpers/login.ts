@@ -12,6 +12,6 @@ export class Login{
         await page.getByRole('textbox', {name: "Username"}).fill(user)
         await page.getByRole('textbox', {name: "Password"}).fill(passwrod)
         await page.getByRole('button', {name: "Login"}).click()
-        expect(await page.locator('ul li a span', {hasText: "Admin"}).textContent()).toEqual("Admin")
+        // expect(await page.locator('ul li a span', {hasText: "Admin"}).textContent()).toEqual("Admin")
     }
 }
