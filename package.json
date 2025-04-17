@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "health": "npx playwright test --project=e2e"
+    "e2e": "npx playwright test --project=e2e"
   },
   "repository": {
     "type": "git",
