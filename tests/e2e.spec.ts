@@ -12,15 +12,15 @@ const employeeLastname = "Smith"
 const EmployeeUserName = process.env.USER_EMPLOYEE
 const EmployeeUserPassword = process.env.PASSWORD_EMPLOYEE
 
-test.describe('e2e', ()=> {
-    test('Login as Admin', async({pageManager})=>{
+test.describe('E2E UI Tests', ()=> {
+    test('Login as Admin and create a new employee', async({pageManager})=>{
         await pageManager.navigateTo().loginPage()
         await pageManager.login().loginAsAdmin(`${user}`, `${password}`)
         await pageManager.navigateTo().pim()
         await pageManager.action().addEmployee(employeeName, employeeLastname, `${EmployeeUserName}`, `${EmployeeUserPassword}`)
     })
 
-    test('Delete Employee', async({pageManager})=>{
+    test('Delete an Employee', async({pageManager})=>{
         await pageManager.navigateTo().loginPage()
         await pageManager.login().loginAsAdmin(`${user}`, `${password}`)
         await pageManager.navigateTo().pim()
