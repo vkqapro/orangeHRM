@@ -15,10 +15,24 @@ export default defineConfig({
   projects: [
 
     {
+      name: 'setup',
+      testMatch: 'createNewEmployee.setup.ts'
+    },
+
+    {
+      name: 'cleanUp',
+      testMatch: 'deleteData.setup.ts',
+      use: { ...devices['Desktop Chrome']},
+    },
+
+
+    {
       name: 'e2e',
       testMatch: 'e2e.spec.ts',
       use: { ...devices['Desktop Chrome'] },
       fullyParallel: false,
+      dependencies: ['setup'], 
+      teardown: 'cleanUp'
     }, 
 
   ],
